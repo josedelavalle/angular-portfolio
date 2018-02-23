@@ -1,0 +1,35 @@
+<div class="grid-container">
+  <mat-grid-list gutterSize="10px" rowHeight="1:1" [cols]="columnNum">
+    <mat-grid-tile
+        *ngFor="let tile of tiles"
+        [colspan]="tile.colspan"
+        [rowspan]="tile.rowspan"
+        [style.background]="'#ddd'">
+      <span class="mat-grid-tile-footer" *ngIf="tile.footer && !tile.hideFooter">
+        <span [ngClass]="tile.hideFooter ? 'hidden' : ''">
+          <i (click)="tile.hideFooter=true"
+            class="fa fa-chevron-down margin-right-5"></i>
+        </span>
+        {{tile.footer}}
+      </span>
+      <span *ngIf="tile.footer && tile.hideFooter">
+        <i (click)="tile.hideFooter=false" class="fa fa-chevron-up bottom-left-icon"></i>
+      </span>
+      <div *ngIf="tile.type == 'color'">
+        <app-color-control></app-color-control>
+      </div>
+      <div *ngIf="tile.type == 'map'">
+        <app-map></app-map>
+      </div>
+      <div *ngIf="tile.type == 'iframe'">
+        <app-iframe [footerHidden]="tile.hideFooter"></app-iframe>
+      </div>
+      <span class="social-tile" *ngIf="tile.type == 'tech'">
+        <app-tech [rowCount]="tile.rowspan"></app-tech>
+      </span>
+      <span class="social-tile" *ngIf="tile.type == 'social'">
+        <app-social></app-social>
+      </span>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

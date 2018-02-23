@@ -1,0 +1,25 @@
+.iframe-container {
+    width: 100%;
+    height: calc(100% - 1px);
+    // border: 1px solid rgba(0,0,0,.38);
+    // border-bottom: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    box-sizing: border-box;
+    
+}
+.iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    //height: calc(100% - 50px);
+    height: 100%;
+    width: 100%;
+    border: 0;
+    &.pad-iframe {
+        padding-bottom: 47px;
+    }
+}

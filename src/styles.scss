@@ -1,1 +1,108 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/purple-green.css';
+
+* {
+    outline: none !important;
+    user-select: none;
+}
+body {
+    background: darkgray;
+    font-family: 'Roboto', sans-serif;
+}
+.text-center {
+    text-align: center;
+}
+.display-flex {
+    display: flex;
+}
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+.full-height {
+    height: 100%;
+}
+.full-width {
+    width: 100%;
+}
+.centered {
+    position: relative;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.bottom-left-icon {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    font-size: 19.2px !important;
+    font-weight: 400 !important;
+    z-index: 3;
+    background: white;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.padding-left-0 {
+    padding-left: 0 !important;
+}
+
+.padding-right-0 {
+    padding-right: 0 !important;
+}
+
+.margin-right-5 {
+    margin-right: 5px !important;
+}
+
+.mat-accent .mat-slider-thumb {
+    background-color: white;
+}
+
+.mat-accent .mat-slider-thumb-label, .mat-accent .mat-slider-track-fill {
+    background-color: rgba(0,0,0,1) !important;
+}
+
+.carousel, .carousel-inner, .carousel-item {
+    height: 100% !important;
+    width: 100% !important;
+    animation: all 1s ease-in-out;
+}
+.carousel-indicators {
+    position: absolute;
+    bottom: 0 !important;
+    li {
+        background-color: white !important;
+        height: 5px !important;
+        cursor: pointer;
+        &.active {
+            background-color: slategray !important;
+        }
+    }
+}
+.carousel-control-next, .carousel-control-prev {
+    display: none !important;
+}
+.carousel-caption {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: auto;
+    max-height: 35px;
+    background: rgba(0,0,0,.38);
+    padding: 5px !important;
+    width: 100%;
+    h3 {
+        font-size: 1.2em !important;
+    }
+}
+.carousel-item {
+    img {
+        width: 120px;
+        @extend .centered;
+        &.large {
+            width: 200px;
+        }
+    }
+}

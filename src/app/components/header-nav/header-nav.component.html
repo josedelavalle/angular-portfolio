@@ -1,0 +1,30 @@
+<mat-toolbar color="default">
+  <span class="d-none d-sm-block">Jose DeLavalle</span>
+  <span class="spacer">
+    <div class="row">
+      <span *ngIf="userData && weatherData" class="col user-data">
+        <span>{{userData.city}}, {{userData.region}}</span>
+        <img class="d-none d-sm-inline" src="http://openweathermap.org/img/w/{{weatherData.weather[0].icon}}.png" />
+        <span>{{weatherData.main.temp}} &deg; {{weatherData.main.unit}}</span>
+      </span>
+    </div>
+    <div class="display-flex flex-nowrap">
+      <mat-icon class="arrow-icon" (click)="prev()">navigate_before</mat-icon>
+      <mat-slider min="1" [max]="maxDataSets" step="1" [(ngModel)]="dataSet" (change)
+      ="sliderChanged()" tickInterval="1"></mat-slider>
+      <mat-icon class="arrow-icon" (click)="next()">navigate_next</mat-icon>
+    </div>
+  </span>
+  <button class="d-none d-sm-block menu-icon" mat-button [matMenuTriggerFor]="appMenu">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-menu #appMenu="matMenu">
+  <button mat-menu-item (click)="changeApp(1)">World population comparison tool</button>
+  <button mat-menu-item (click)="changeApp(2)">Realtime compiled Internet news</button>
+  <button mat-menu-item (click)="changeApp(3)">Photos taken at world locations</button>
+  <button mat-menu-item (click)="changeApp(4)">Explore the United States</button>
+  <button mat-menu-item (click)="changeApp(5)">A voyage into the great beyond</button>
+  <button mat-menu-item (click)="changeApp(6)">Reach out or learn more about me</button>
+</mat-menu>
