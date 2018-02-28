@@ -1,11 +1,22 @@
 <mat-toolbar color="default">
-  <span class="d-none d-sm-block">Jose DeLavalle</span>
+  <div class="progress-bar-container">
+      <mat-progress-bar class="progress-bar" mode="determinate" min=1 max=10 [value]="ticks"></mat-progress-bar>
+  </div>
+  <div>
+      <div class="d-none d-sm-block">Jose DeLavalle</div>
+      <a target="_blank" href="https://github.com/josedelavalle/angular-portfolio">
+        <small><i class="fa fa-github"></i>
+          <span class="d-none d-sm-inline">Code available on GitHub</span>
+        </small>
+      </a>
+  </div>
+  
   <span class="spacer">
     <div class="row">
       <span *ngIf="userData && weatherData" class="col user-data">
         <span>{{userData.city}}, {{userData.region}}</span>
         <img class="d-none d-sm-inline" src="http://openweathermap.org/img/w/{{weatherData.weather[0].icon}}.png" />
-        <span>{{weatherData.main.temp}} &deg; {{weatherData.main.unit}}</span>
+        <span>{{weatherData.main.temp | number : '1.0-0'}} &deg; {{weatherData.main.unit}}</span>
       </span>
     </div>
     <div class="display-flex flex-nowrap">
@@ -15,16 +26,19 @@
       <mat-icon class="arrow-icon" (click)="next()">navigate_next</mat-icon>
     </div>
   </span>
-  <button class="d-none d-sm-block menu-icon" mat-button [matMenuTriggerFor]="appMenu">
+  <button class="menu-icon" mat-button [matMenuTriggerFor]="appMenu">
     <mat-icon>menu</mat-icon>
   </button>
+  
+  
 </mat-toolbar>
 
 <mat-menu #appMenu="matMenu">
-  <button mat-menu-item (click)="changeApp(1)">World population comparison tool</button>
-  <button mat-menu-item (click)="changeApp(2)">Realtime compiled Internet news</button>
-  <button mat-menu-item (click)="changeApp(3)">Photos taken at world locations</button>
-  <button mat-menu-item (click)="changeApp(4)">Explore the United States</button>
-  <button mat-menu-item (click)="changeApp(5)">A voyage into the great beyond</button>
-  <button mat-menu-item (click)="changeApp(6)">Reach out or learn more about me</button>
+  <div class="menu-title">Thanks for visiting</div>
+  <button mat-menu-item (click)="changeApp(1)">&bull;&nbsp;World population comparison tool</button>
+  <button mat-menu-item (click)="changeApp(2)">&bull;&nbsp;Realtime compiled Internet news</button>
+  <button mat-menu-item (click)="changeApp(3)">&bull;&nbsp;Photos taken at world locations</button>
+  <button mat-menu-item (click)="changeApp(4)">&bull;&nbsp;Explore the United States</button>
+  <button mat-menu-item (click)="changeApp(5)">&bull;&nbsp;A voyage into the great beyond</button>
+  <button mat-menu-item (click)="changeApp(6)">&bull;&nbsp;Learn more about me and reach out</button>
 </mat-menu>

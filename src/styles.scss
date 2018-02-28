@@ -1,13 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/purple-green.css';
-
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 * {
-    outline: none !important;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
+    outline: none !important;
 }
 body {
     background: darkgray;
     font-family: 'Roboto', sans-serif;
+}
+.fa {
+    cursor: pointer;
+}
+.mat-progress-bar-background {
+    fill: #ddd !important;
 }
 .text-center {
     text-align: center;
@@ -37,7 +45,7 @@ body {
     left: 5px;
     font-size: 19.2px !important;
     font-weight: 400 !important;
-    z-index: 3;
+    z-index: 2;
     background: white;
     border-radius: 50%;
     padding: 10px;
@@ -60,9 +68,14 @@ body {
 }
 
 .mat-accent .mat-slider-thumb-label, .mat-accent .mat-slider-track-fill {
-    background-color: rgba(0,0,0,1) !important;
+    //background-color: rgba(0,0,0,1) !important;
 }
-
+.mat-menu-panel {
+    max-width: 300px !important;
+}
+.mat-menu-content {
+    padding: 0px !important;
+}
 .carousel, .carousel-inner, .carousel-item {
     height: 100% !important;
     width: 100% !important;
@@ -100,6 +113,7 @@ body {
 .carousel-item {
     img {
         width: 120px;
+        max-width: 70%;
         @extend .centered;
         &.large {
             width: 200px;

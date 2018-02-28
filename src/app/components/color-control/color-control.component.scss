@@ -2,29 +2,38 @@
     font-size: 3em;
 }
 
+#controls {
+    height: calc(100% - 50px);
+    margin-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: calc(100% - 50px);
+    .icon {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: auto !important;
+    }
+}
 
-#wheelDiv {
-    height: 400px;
-    width: 400px;
-    margin: auto;
-  }
-  
-  #wheelDiv>svg {
-    height: 100%;
+.circle-set {
+    position: absolute;
+    display: flex;
+    max-width: 400px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
-  }
-  
-  @media (max-width: 600px) {
-    #wheelDiv {
-        height: 350px;
-        width: 350px;
-    }
-  }
-  
-  @media (max-width: 400px) {
-    #wheelDiv {
-        height: 300px;
-        width: 300px;
-    }
-  }
-  
+    height: 50px;
+    flex-direction: row;
+    transition: all 1s ease-in-out;
+    
+    i {
+		font-size: 1.8em;
+	}
+	div {
+		padding: 5px;
+		margin: auto;
+	}
+}

@@ -4,17 +4,43 @@
 mat-toolbar {
     margin-bottom: 10px;
     min-height: 100px;
-    background: slategray;
+    background:#888;
+    a {
+        color: #ddd;
+    }
+    .fa-github {
+        padding-right: 5px;
+    }
 }
+
 .menu-icon {
-    width: 145px;
+    width: 135px;
+    height: 50px;
 }
+
+.menu-title {
+    text-align: center;
+    font-size: 1.5em;
+    color: black;
+    background-color: #ddd;
+    border-bottom: 2px solid rgb(123, 240, 205);
+    padding: 10px;
+}
+
 .mat-slider-horizontal {
     //margin: 0 50px 0 20px;
     align-self: center;
     margin: auto;
     width: 100%;
     cursor: pointer;
+}
+.progress-bar-container {
+    height: 50px;
+}
+.progress-bar {
+    position: absolute;
+    top: 95px;
+    left: 0;
 }
 
 .arrow-icon {
@@ -29,8 +55,24 @@ mat-toolbar {
     
 }
 
+@media only screen and (max-width: 800px) {
+    a {
+        font-size: 0.8em;
+    }
+}
+
 @media only screen and (max-width: 500px) {
     .user-data {
         font-size: 0.8em;
     }
+    .menu-icon {
+        width: 40px;
+        padding: 0;
+        min-width: 40px;
+    }
+    .fa-github {
+        font-size: 1.9em;
+        padding: 10px 5px 0 10px !important;
+    }
 }
+

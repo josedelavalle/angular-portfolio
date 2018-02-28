@@ -11,6 +11,7 @@ export class IframeComponent implements OnInit {
   @Input() footerHidden: boolean;
   dataSet: number = 1;
   iframeUrl: {};
+  fullscreen: boolean = false;
   constructor(private sliderDataService: SliderDataService, private sanitizer: DomSanitizer) { }
 
   updateIframe() {
@@ -30,6 +31,12 @@ export class IframeComponent implements OnInit {
     }
   }
 
+  toggleFullscreen() {
+    this.fullscreen = !this.fullscreen;
+    this.footerHidden = this.fullscreen ? true : false;
+    
+    console.log(this.fullscreen)
+  }
   ngOnInit() {
     this.sliderDataService.cast.subscribe(dataSet => {
       this.dataSet = dataSet;

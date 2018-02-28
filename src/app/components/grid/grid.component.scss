@@ -7,6 +7,9 @@
     min-width: unset;
     text-align: center;
 }
+mat-grid-tile {
+    transition: background-color 0.4s ease-in-out;
+}
 .mat-grid-tile-footer {
     z-index: 2;
     font-size: 1em;

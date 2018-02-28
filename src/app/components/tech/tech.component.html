@@ -33,4 +33,18 @@
         <h3>HTML 5</h3>
       </div>
   </ng-template>
+
+  <ng-template ngbSlide>
+    <img [ngClass]="(rowCount > 1) ? 'large' : ''" src="../../assets/images/bootstrap.png" alt="Bootstrap 4">
+    <div class="carousel-caption">
+        <h3>Bootstrap 4</h3>
+      </div>
+  </ng-template>
+
+    <ng-template ngbSlide>
+      <img [ngClass]="(rowCount > 1) ? 'large' : ''" src="../../assets/images/material.png" alt="Material Design">
+      <div class="carousel-caption">
+          <h3>Material Design</h3>
+        </div>
+    </ng-template>
 </ngb-carousel>

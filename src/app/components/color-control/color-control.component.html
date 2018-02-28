@@ -1,1 +1,9 @@
-<i class="fa fa-play fa-3x"></i>
+<div id="controls" class="col controls" ng-click="toggleInterval()">
+    <div (click)="toggleCycling()" class="color-control-icon fa" [ngClass]="isCycling ? 'fa-pause' : 'fa-play'"></div>
+</div>
+<div class="circle-set">
+    <div *ngFor="let set of colorSetIndicators; let i = index">
+        <i class="fa" [ngClass]="colorSet === i ? 'fa-check-circle' : 'fa-circle'"
+         [ngStyle]="{'color': set}" (click)="setColor(i)"></i>
+    </div>
+</div>

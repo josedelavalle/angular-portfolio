@@ -1,10 +1,10 @@
 <div class="grid-container">
   <mat-grid-list gutterSize="10px" rowHeight="1:1" [cols]="columnNum">
     <mat-grid-tile
-        *ngFor="let tile of tiles"
+        *ngFor="let tile of tiles; let i = index"
         [colspan]="tile.colspan"
         [rowspan]="tile.rowspan"
-        [style.background]="'#ddd'">
+        [style.background]="'#' + colorSets[colorSet][i]">
       <span class="mat-grid-tile-footer" *ngIf="tile.footer && !tile.hideFooter">
         <span [ngClass]="tile.hideFooter ? 'hidden' : ''">
           <i (click)="tile.hideFooter=true"

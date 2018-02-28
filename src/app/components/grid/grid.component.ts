@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { SliderDataService } from '../../services/slider-data.service';
+import { ColorDataService } from '../../services/color-data.service';
 import {MediaChange, ObservableMedia} from "@angular/flex-layout";
 
 @Component({
@@ -10,8 +11,18 @@ import {MediaChange, ObservableMedia} from "@angular/flex-layout";
 })
 export class GridComponent implements OnInit {
   myData: Array<any>;
-  dataSet: number = 1;
+  dataSet: number = null;
   columnNum: number = 8;
+  colorSet: number = null;
+
+  colorSets: Array<Array<string>> = [
+    ['00563c','3b3b3b','2b6669','46aede','46aeb4'],
+    ['5383bc','222222','315178','3b3b3b','3f6a9d'],
+    ['7f7bca','424242','a19ed9','292929','5c57bb'],
+    ['ffffff','feffff','eeeeee','efefef','fefefe'],
+    ['353535','3b3b3b','702e3c','703e3c','b94a62']
+  ];
+
   defaultTiles: Array<any> = 
   [
     [{ id: 1, type: 'color', footer: 'Color controls', rowspan: 1, colspan: 1, colspanxs: 2, colspansm: 2, colspanmd: 1, colspanlg: 1, hiddenxs: true },
@@ -52,7 +63,7 @@ export class GridComponent implements OnInit {
   //tiles: Array<any> = this.defaultTiles[0];
   tiles: Array<any> = [];
   size: string = '';
-  constructor(private sliderDataService: SliderDataService, media: ObservableMedia) {
+  constructor(private sliderDataService: SliderDataService, private colorDataService: ColorDataService, media: ObservableMedia) {
     media.asObservable()
     .subscribe((change: MediaChange) => {
       this.size = change.mqAlias;
@@ -99,6 +110,10 @@ export class GridComponent implements OnInit {
       this.dataSet = dataSet
       this.tiles = this.defaultTiles[this.dataSet - 1];
       this.updateTiles(this.size);
+    });
+
+    this.colorDataService.castColorSet.subscribe(dataSet => {
+      this.colorSet = dataSet;
     });
   }
 

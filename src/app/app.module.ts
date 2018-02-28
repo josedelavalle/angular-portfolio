@@ -17,6 +17,7 @@ import { HeaderNavComponent } from './components/header-nav/header-nav.component
 import { GridComponent } from './components/grid/grid.component';
 import { SliderDataService } from './services/slider-data.service';
 import { UserDataService } from './services/user-data.service';
+import { ColorDataService } from './services/color-data.service';
 import { ColorControlComponent } from './components/color-control/color-control.component';
 import { MapComponent } from './components/map/map.component';
 import { SocialComponent } from './components/social/social.component';
@@ -51,7 +52,7 @@ import { IframeComponent } from './components/iframe/iframe.component';
     ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
     NgbModule.forRoot()
   ],
-  providers: [UserDataService, SliderDataService],
+  providers: [UserDataService, SliderDataService, ColorDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
