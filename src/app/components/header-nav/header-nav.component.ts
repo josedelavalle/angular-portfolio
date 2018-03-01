@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy} from '@angular/core';
-import { DecimalPipe } from '@angular/common';
+import { DecimalPipe, DatePipe } from '@angular/common';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Rx';
 import { SliderDataService } from '../../services/slider-data.service';
@@ -20,21 +20,30 @@ export class HeaderNavComponent implements OnInit, OnDestroy {
   ticks: number = 0;
   timerMax: number = 100;
   timer: Observable<any> = null;
+  dateNow : Date = new Date();
   private subscription: Subscription;
 
   constructor(private userDataService: UserDataService, private colorDataService: ColorDataService, private sliderDataService:SliderDataService) { }
 
   sliderChanged() {
+    this.sliderDataService.setHashbang('');
     this.sliderDataService.setDataSet(this.dataSet);
   }
   next() {
+    this.sliderDataService.setHashbang('');
     this.sliderDataService.nextDataSet();
   }
   prev() {
+    this.sliderDataService.setHashbang('');
     this.sliderDataService.prevDataSet();
   }
   changeApp(i) {
+    this.sliderDataService.setHashbang('');
     this.sliderDataService.setDataSet(i);
+  }
+  goToHeatmap() {
+    this.sliderDataService.setHashbang('#map');
+    this.sliderDataService.setDataSet(6);
   }
   ngOnInit() {
     this.sliderDataService.cast.subscribe(dataSet => this.dataSet = dataSet);

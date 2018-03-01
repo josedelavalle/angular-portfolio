@@ -4,7 +4,9 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 @Injectable()
 export class SliderDataService {
   private dataSet = new BehaviorSubject<number>(1);
+  private hashbang = new BehaviorSubject<string>('');
   cast = this.dataSet.asObservable();
+  castHash = this.hashbang.asObservable();
   maxDataSet: number = 6;
   constructor() { }
 
@@ -24,5 +26,9 @@ export class SliderDataService {
 
   setDataSet(x) {
     this.dataSet.next(x);
+  }
+
+  setHashbang(h) {
+    this.hashbang.next(h);
   }
 }

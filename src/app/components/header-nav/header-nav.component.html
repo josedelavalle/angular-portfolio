@@ -1,35 +1,51 @@
 <mat-toolbar color="default">
   <div class="progress-bar-container">
-      <mat-progress-bar class="progress-bar" mode="determinate" min=1 max=10 [value]="ticks"></mat-progress-bar>
+      <mat-progress-bar class="progress-bar" mode="determinate" [value]="ticks"></mat-progress-bar>
   </div>
-  <div>
-      <div class="d-none d-sm-block">Jose DeLavalle</div>
+  <div class="col-2">
+      <div class="d-none d-md-block">
+        <img class="image-of-me" src="../../assets/images/me.jpg">
+        Jose DeLavalle
+      </div>
       <a target="_blank" href="https://github.com/josedelavalle/angular-portfolio">
-        <small><i class="fa fa-github"></i>
-          <span class="d-none d-sm-inline">Code available on GitHub</span>
+        <small>
+          <i class="fa fa-github"></i>
+          <span class="d-none d-md-inline header-link">Code available on GitHub</span>
         </small>
       </a>
   </div>
   
-  <span class="spacer">
+  <span class="spacer col">
     <div class="row">
       <span *ngIf="userData && weatherData" class="col user-data">
-        <span>{{userData.city}}, {{userData.region}}</span>
-        <img class="d-none d-sm-inline" src="http://openweathermap.org/img/w/{{weatherData.weather[0].icon}}.png" />
-        <span>{{weatherData.main.temp | number : '1.0-0'}} &deg; {{weatherData.main.unit}}</span>
+        <span class="user-loc">{{userData.city}}, {{userData.region}}</span>
+        <img class="d-none d-sm-inline weather-icon" src="http://openweathermap.org/img/w/{{weatherData.weather[0].icon}}.png" />
+        <span class="user-loc">{{weatherData.main.temp | number : '1.0-0'}} &deg; {{weatherData.main.unit}}</span>
       </span>
     </div>
-    <div class="display-flex flex-nowrap">
+    <div class="display-flex flex-nowrap slider-controls">
       <mat-icon class="arrow-icon" (click)="prev()">navigate_before</mat-icon>
       <mat-slider min="1" [max]="maxDataSets" step="1" [(ngModel)]="dataSet" (change)
       ="sliderChanged()" tickInterval="1"></mat-slider>
       <mat-icon class="arrow-icon" (click)="next()">navigate_next</mat-icon>
     </div>
+    <div class="menu-container">
+      <div class="menu-icon" [matMenuTriggerFor]="appMenu">
+        <mat-icon>menu</mat-icon>
+      </div>
+    </div>
   </span>
-  <button class="menu-icon" mat-button [matMenuTriggerFor]="appMenu">
-    <mat-icon>menu</mat-icon>
-  </button>
-  
+  <div class="col-2 text-center">
+      <div class="date-container d-none d-md-block">
+        {{dateNow | date : 'longDate'}}
+      </div>
+      <a (click)="goToHeatmap()">
+          <small class="heatmap-link">
+              <span class="d-none d-md-inline header-link">Portfolio Visitor Heatmap</span>
+              <i class="fa fa-globe"></i>
+          </small>
+      </a>
+  </div>
   
 </mat-toolbar>
 

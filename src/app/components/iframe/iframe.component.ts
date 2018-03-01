@@ -12,6 +12,7 @@ export class IframeComponent implements OnInit {
   dataSet: number = 1;
   iframeUrl: {};
   fullscreen: boolean = false;
+  hashbang: string = '';
   constructor(private sliderDataService: SliderDataService, private sanitizer: DomSanitizer) { }
 
   updateIframe() {
@@ -26,21 +27,24 @@ export class IframeComponent implements OnInit {
         return "http://ngstates.josedelavalle.com";
       case 5:
         return "http://ngnasa.josedelavalle.com";
-      default:
-        return "http://josedelavalle.com";
+      case 6:
+        return "http://josedelavalle.com" + this.hashbang;
     }
   }
 
   toggleFullscreen() {
     this.fullscreen = !this.fullscreen;
-    this.footerHidden = this.fullscreen ? true : false;
-    
-    console.log(this.fullscreen)
+    this.footerHidden = this.fullscreen;
   }
+
   ngOnInit() {
-    this.sliderDataService.cast.subscribe(dataSet => {
-      this.dataSet = dataSet;
-      this.iframeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.updateIframe());
+    //get hashbang before switching iframe url
+    this.sliderDataService.castHash.subscribe(hashbang => {
+      this.hashbang = hashbang;
+      this.sliderDataService.cast.subscribe(dataSet => {
+        this.dataSet = dataSet;
+        this.iframeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.updateIframe());
+      });
     });
   }
 

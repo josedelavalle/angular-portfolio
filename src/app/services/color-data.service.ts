@@ -13,8 +13,10 @@ export class ColorDataService {
 
   nextDataSet() {
     var newDataSet = this.colorSet.value;
+    console.log(newDataSet);
     newDataSet++;
-    if (newDataSet > this.maxColorSet) newDataSet = 1;
+    if (newDataSet >= this.maxColorSet) newDataSet = 0;
+    console.log(newDataSet);
     this.getColorSet(newDataSet);
   }
   

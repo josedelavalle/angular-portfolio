@@ -20,7 +20,7 @@ export class GridComponent implements OnInit {
     ['5383bc','222222','315178','3b3b3b','3f6a9d'],
     ['7f7bca','424242','a19ed9','292929','5c57bb'],
     ['ffffff','feffff','eeeeee','efefef','fefefe'],
-    ['353535','3b3b3b','702e3c','703e3c','b94a62']
+    ['703e3c','b94a62','702e3c','703e3c','b94a62']
   ];
 
   defaultTiles: Array<any> = 

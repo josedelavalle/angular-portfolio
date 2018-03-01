@@ -64,7 +64,8 @@ body {
 }
 
 .mat-accent .mat-slider-thumb {
-    background-color: white;
+    background-color: white !important;
+    border: 0;
 }
 
 .mat-accent .mat-slider-thumb-label, .mat-accent .mat-slider-track-fill {
