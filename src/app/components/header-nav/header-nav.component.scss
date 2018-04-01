@@ -1,58 +1,91 @@
+$dark-grey: #444444;
+
 .spacer {
     flex: 1 1 auto;
 }
-.date-container {
-    //margin-top: -30px;
-    float: right;
-    //text-align: center;
+
+.name {
     font-size: 0.8em;
 }
+
+.date-container {
+    float: right;
+    font-size: 0.8em;
+}
+
 .heatmap-link {
     float: right;
+    clear: both;
     cursor: pointer;
+    color: #ddd;
 }
+
 mat-toolbar {
     margin-bottom: 10px;
     min-height: 100px;
     background:#888;
+    padding: 0 2px;
+
     a {
         color: #ddd;
     }
+
     .fa {
         padding: 0 5px 0 2px;
         font-size: 1.65em;
     }
 }
+
 .image-of-me {
-    width: 25px;
+    width: 30px;
     border-radius: 50%;
     margin-top: -7px;
     padding-left: 2px;
     margin-right: 4px;
-    //margin-left: -5px;
 }
-.slider-controls {
-    //margin-top: 20px;
+
+.fa-info {
+    color: $dark-grey;
+    font-size: 1em !important;
 }
+
+.fa-bars {
+    color: $dark-grey;
+    font-size: 1.2em !important;
+}
+
 .spacer {
     height: 100%;
+    padding: 0;
 }
+
 .menu-container {
     position: absolute;
-    bottom: 0;
+    display: inline;
+    bottom: 5px;
+    right: 0;
+    left: 0;
     text-align: center;
-    width: 100%;
-    
 }
+
+.col-xs-1 {
+    padding: 0;
+}
+
 .menu-icon {
     width: 100px;
     margin: auto;
     //height: 50px;
     text-align: center;
+    cursor: pointer;
+    font-size: 0.8em;
+    color: $dark-grey;
 }
+
 .col-2 {
     padding: 0 !important;
 }
+
 .menu-title {
     text-align: center;
     font-size: 1.5em;
@@ -69,14 +102,17 @@ mat-toolbar {
     width: 100%;
     cursor: pointer;
 }
+
 .progress-bar-container {
     height: 50px;
 }
+
 .progress-bar {
     position: absolute;
     top: 95px;
     left: 0;
 }
+
 .header-link {
     &:hover {
         color: white;
@@ -88,30 +124,39 @@ mat-toolbar {
         }
     }
 }
+
 .arrow-icon {
-    font-size: 2.5em;
-    width: 50px;
+    font-size: 2.5em !important;
+    width: 75px;
     cursor: pointer;
+    color: $dark-grey;
+    text-align: center;
 }
+
 .user-data {
     text-align: center;
     height: 30px;
 }
+
 .user-loc {
     font-size: 1em;
 }
+
 @media only screen and (max-width: 1200px) {
     .header-link {
-        font-size: 0.8em;
+        font-size: 10px;
     }   
 }
+
 @media only screen and (max-width: 900px) {
     a {
         font-size: 0.8em;
     }
+
     .user-loc {
         font-size: 0.6em;
     }
+
     .weather-icon {
         height: 30px;
     }
@@ -121,17 +166,19 @@ mat-toolbar {
     .user-data {
         font-size: 0.8em;
     }
+
     .user-loc {
         font-size: 1em;
     }
+
     .menu-icon {
         width: 40px;
         padding: 0;
         min-width: 40px;
     }
+
     .fa {
         font-size: 1.9em;
         padding: 10px 5px 0 10px !important;
     }
 }
-

@@ -2,13 +2,13 @@
   <div class="progress-bar-container">
       <mat-progress-bar class="progress-bar" mode="determinate" [value]="ticks"></mat-progress-bar>
   </div>
-  <div class="col-2">
+  <div class="col-xs-1 col-sm-2">
       <div class="d-none d-md-block">
         <img class="image-of-me" src="../../assets/images/me.jpg">
-        Jose DeLavalle
+        <span class="name clickable" (click)="goToContactForm()" matTooltip="Send me a message" [matTooltipPosition]="'after'">Jose DeLavalle</span>
       </div>
       <a target="_blank" href="https://github.com/josedelavalle/angular-portfolio">
-        <small>
+        <small matTooltip="Why not check out the source code?" [matTooltipPosition]="'below'">
           <i class="fa fa-github"></i>
           <span class="d-none d-md-inline header-link">Code available on GitHub</span>
         </small>
@@ -18,33 +18,38 @@
   <span class="spacer col">
     <div class="row">
       <span *ngIf="userData && weatherData" class="col user-data">
-        <span class="user-loc">{{userData.city}}, {{userData.region}}</span>
-        <img class="d-none d-sm-inline weather-icon" src="http://openweathermap.org/img/w/{{weatherData.weather[0].icon}}.png" />
-        <span class="user-loc">{{weatherData.main.temp | number : '1.0-0'}} &deg; {{weatherData.main.unit}}</span>
+        <span matTooltip="Where you are and what it's like outside" [matTooltipPosition]="'below'">
+          <span class="user-loc">{{userData.city}}, {{userData.region}}</span>
+          <img class="d-none d-sm-inline weather-icon" src="http://openweathermap.org/img/w/{{weatherData.weather[0].icon}}.png" />
+          <span class="user-loc">{{weatherData.main.temp | number : '1.0-0'}} &deg; {{weatherData.main.unit}}</span>
+        </span>
       </span>
     </div>
     <div class="display-flex flex-nowrap slider-controls">
-      <mat-icon class="arrow-icon" (click)="prev()">navigate_before</mat-icon>
-      <mat-slider min="1" [max]="maxDataSets" step="1" [(ngModel)]="dataSet" (change)
+      <i class="arrow-icon fa fa-chevron-left" matTooltip="Go to the previous app" [matTooltipPosition]="'before'" (click)="prev()"></i>
+      <mat-slider matTooltip="Click or drag to change apps" [matTooltipPosition]="'below'" min="1" [max]="maxDataSets" step="1" [(ngModel)]="dataSet" (change)
       ="sliderChanged()" tickInterval="1"></mat-slider>
-      <mat-icon class="arrow-icon" (click)="next()">navigate_next</mat-icon>
+      <i class="arrow-icon fa fa-chevron-right" matTooltip="Go to the next app" [matTooltipPosition]="'after'" (click)="next()"></i>
     </div>
-    <div class="menu-container">
-      <div class="menu-icon" [matMenuTriggerFor]="appMenu">
-        <mat-icon>menu</mat-icon>
-      </div>
-    </div>
+    <span class="menu-container">
+      <span class="fa fa-info" matTooltip="Information about what you're looking at" [matTooltipPosition]="'before'" (click)="openSnackBar()"></span>
+      <span class="menu-icon" [matMenuTriggerFor]="appMenu">
+        <i class="fa fa-bars" matTooltip="Open menu of the options before you" [matTooltipPosition]="'after'"></i>
+      </span>
+    </span>
   </span>
-  <div class="col-2 text-center">
-      <div class="date-container d-none d-md-block">
-        {{dateNow | date : 'longDate'}}
+  <div class="col-xs-1 col-sm-2 text-center">
+      <div class="date-container d-none d-md-block" matTooltip="Self-explanatory tooltip :)" [matTooltipPosition]="'before'" >
+        {{dateNow | date : 'longDate'}} 
+        <span class="d-none d-xl-inline">{{dateNow | date : 'shortTime'}}</span>
+        <i class="fa fa-calendar"></i>
+      </div><br>
+      <div (click)="goToHeatmap()">
+        <small class="heatmap-link">
+            <span class="d-none d-md-inline header-link" matTooltip="A data visualization of where visitors to this site are in the world">Portfolio Visitor Heatmap</span>
+            <i class="fa fa-globe"></i>
+        </small>
       </div>
-      <a (click)="goToHeatmap()">
-          <small class="heatmap-link">
-              <span class="d-none d-md-inline header-link">Portfolio Visitor Heatmap</span>
-              <i class="fa fa-globe"></i>
-          </small>
-      </a>
   </div>
   
 </mat-toolbar>

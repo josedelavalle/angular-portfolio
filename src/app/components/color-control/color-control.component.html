@@ -1,5 +1,5 @@
 <div id="controls" class="col controls" ng-click="toggleInterval()">
-    <div (click)="toggleCycling()" class="color-control-icon fa" [ngClass]="isCycling ? 'fa-pause' : 'fa-play'"></div>
+    <div matTooltip="Automatically cycle through available color options" (click)="toggleCycling()" class="color-control-icon fa" [ngClass]="isCycling ? 'fa-pause' : 'fa-play'"></div>
 </div>
 <div class="circle-set">
     <div *ngFor="let set of colorSetIndicators; let i = index">

@@ -1,6 +1,6 @@
 <div class="iframe-container" [ngClass]="fullscreen ? 'full-screen' : ''">
   <iframe [ngClass]="footerHidden ? '' : 'pad-iframe'" class="iframe" [src]=iframeUrl></iframe>
   <div class="toggle-fullscreen" (click)="toggleFullscreen()">
-    <i class="fa" [ngClass]="fullscreen ? 'fa-window-minimize' : 'fa-window-maximize'"></i>
+    <i class="fa" matTooltip="Toggle full-screen mode" [matTooltipPosition]="'before'" [ngClass]="fullscreen ? 'fa-window-minimize' : 'fa-window-maximize'"></i>
   </div>
 </div>

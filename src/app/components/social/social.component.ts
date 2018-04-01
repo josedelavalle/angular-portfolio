@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SliderDataService } from '../../services/slider-data.service';
 
 @Component({
   selector: 'app-social',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SocialComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sliderDataService:SliderDataService) { }
 
   ngOnInit() {
   }
 
+  goToContactForm() {
+    this.sliderDataService.setHashbang('#contact');
+    this.sliderDataService.setDataSet(6);
+  }
 }

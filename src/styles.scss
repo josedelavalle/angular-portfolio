@@ -11,7 +11,7 @@ body {
     background: darkgray;
     font-family: 'Roboto', sans-serif;
 }
-.fa {
+.fa:not(.fa-calendar){
     cursor: pointer;
 }
 .mat-progress-bar-background {
@@ -121,3 +121,12 @@ body {
         }
     }
 }
+.clickable {
+    cursor: pointer;
+}
+.mat-progress-bar-fill::after {
+    background-color: rgb(255,64,129);
+  }
+  .mat-progress-bar-buffer {
+      background-color: #ddd;
+  }

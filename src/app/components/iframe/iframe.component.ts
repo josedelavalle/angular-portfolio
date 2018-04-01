@@ -28,7 +28,7 @@ export class IframeComponent implements OnInit {
       case 5:
         return "http://ngnasa.josedelavalle.com";
       case 6:
-        return "http://josedelavalle.com" + this.hashbang;
+        return "http://me.josedelavalle.com" + this.hashbang;
     }
   }
 
