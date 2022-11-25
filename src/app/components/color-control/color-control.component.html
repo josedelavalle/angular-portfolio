@@ -1,0 +1,13 @@
+<div id="controls" class="col controls">
+    <fa-icon matTooltip="Automatically cycle through available color options" 
+        (click)="toggleCycling()" 
+        class="color-control-icon" 
+        [icon]="isCycling ? faPause : faPlay">
+    </fa-icon>
+</div>
+<div class="circle-set">
+    <div *ngFor="let set of colorSetIndicators; let i = index">
+        <fa-icon [icon]="colorSet === i ? faCheckCircle : faCircle"
+         [ngStyle]="{'color': set}" (click)="setColor(i)"></fa-icon>
+    </div>
+</div>

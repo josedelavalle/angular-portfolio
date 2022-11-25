@@ -1,0 +1,74 @@
+<mat-toolbar color="default">
+    <div class="progress-bar-container">
+        <mat-progress-bar class="progress-bar" mode="determinate" [value]="ticks"></mat-progress-bar>
+    </div>
+    <div class="col-xs-1 col-sm-2">
+        <div class="me-section">
+          <img class="image-of-me" src="../../assets/images/me-stylized.png">
+          <span class="name clickable" (click)="goToContactForm()" matTooltip="Send me a message" [matTooltipPosition]="'after'">Jose DeLavalle</span>
+        </div>
+        <a target="_blank" href="https://github.com/josedelavalle/angular-portfolio">
+          <small matTooltip="Why not check out the source code?" [matTooltipPosition]="'below'">
+            <i class="fa fa-github"></i>
+            <span class="d-none d-md-inline header-link">Code available on GitHub</span>
+          </small>
+        </a>
+    </div>
+    
+    <span class="spacer col">
+      <div class="row weather-row">
+        <span *ngIf="userData && weatherData" class="col user-data">
+          <span matTooltip="Where you are and what it's like outside" [matTooltipPosition]="'below'">
+            <span class="user-loc">{{userData.city}}, {{userData.region}}</span>
+            <img class="d-none d-sm-inline weather-icon" src="http://openweathermap.org/img/w/{{weatherData.weather[0].icon}}.png" />
+            <span class="user-loc">{{weatherData.main.temp | number : '1.0-0'}} &deg; {{weatherData.main.unit}}</span>
+          </span>
+        </span>
+      </div>
+      <div class="display-flex flex-nowrap slider-controls">
+        <fa-icon class="arrow-icon" [icon]="faLeft" matTooltip="Go to the previous app" [matTooltipPosition]="'below'" (click)="prev()"></fa-icon>
+        <mat-slider name="appSlider" 
+          ngDefaultControl 
+          matTooltip="Click or drag to change apps" 
+          [matTooltipPosition]="'below'" 
+          min="1" 
+          [max]="maxDataSets" 
+          step="1"
+          (change)="sliderChanged()" 
+          tickInterval="1">
+          <input matSliderThumb [(ngModel)]="dataSet">
+        </mat-slider>
+        <fa-icon class="arrow-icon" [icon]="faRight" matTooltip="Go to the next app" [matTooltipPosition]="'below'" (click)="next()"></fa-icon>
+      </div>
+      <span class="menu-container">
+        <span class="fa fa-info" matTooltip="Information about what you're looking at" [matTooltipPosition]="'before'" (click)="openSnackBar()"></span>
+        <span class="menu-icon" [matMenuTriggerFor]="appMenu">
+          <fa-icon [icon]="faBars" matTooltip="Open menu of the options before you" [matTooltipPosition]="'after'"></fa-icon>
+        </span>
+      </span>
+    </span>
+    <div class="col-xs-1 col-sm-2 text-center">
+        <div class="date-container d-none d-md-block" matTooltip="{{dateNow | date : 'EEEE'}}" [matTooltipPosition]="'before'" >
+          {{dateNow | date : 'longDate'}} 
+          <span class="d-none d-xl-inline">{{dateNow | date : 'shortTime'}}</span>
+          <i class="fa fa-calendar"></i>
+        </div><br>
+        <div (click)="goToHeatmap()">
+          <small class="heatmap-link">
+              <span class="d-none d-md-inline header-link" matTooltip="A data visualization of where visitors to this site are in the world">Portfolio Visitor Heatmap</span>
+              <i class="fa fa-globe"></i>
+          </small>
+        </div>
+    </div>
+    
+  </mat-toolbar>
+  
+  <mat-menu #appMenu="matMenu">
+    <div class="menu-title">Thanks for visiting</div>
+    <button mat-menu-item (click)="changeApp(1)">&bull;&nbsp;World population comparison tool</button>
+    <button mat-menu-item (click)="changeApp(2)">&bull;&nbsp;Realtime compiled Internet news</button>
+    <button mat-menu-item (click)="changeApp(3)">&bull;&nbsp;Photos taken at world locations</button>
+    <button mat-menu-item (click)="changeApp(4)">&bull;&nbsp;Explore the United States</button>
+    <button mat-menu-item (click)="changeApp(5)">&bull;&nbsp;A voyage into the great beyond</button>
+    <button mat-menu-item (click)="changeApp(6)">&bull;&nbsp;Learn more about me and reach out</button>
+  </mat-menu>

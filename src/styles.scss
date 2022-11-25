@@ -1,1 +1,103 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none !important;
+}
+body {
+    margin: 0;
+    background: darkgray;
+    font-family: 'Roboto', sans-serif;
+}
+.fa:not(.fa-calendar){
+    cursor: pointer;
+}
+.mat-progress-bar-background {
+    fill: #ddd !important;
+}
+.text-center {
+    text-align: center;
+}
+.display-flex {
+    display: flex;
+}
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+.full-height {
+    height: 100%;
+}
+.full-width {
+    width: 100%;
+}
+.centered {
+    position: relative;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.bottom-left-icon {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    font-size: 19.2px !important;
+    font-weight: 400 !important;
+    z-index: 2;
+    background: white;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.padding-left-0 {
+    padding-left: 0 !important;
+}
+
+.padding-right-0 {
+    padding-right: 0 !important;
+}
+
+.margin-right-5 {
+    margin-right: 5px !important;
+}
+
+.mat-accent .mat-slider-thumb {
+    background-color: white !important;
+    border: 0;
+}
+
+.mat-menu-panel {
+    max-width: 300px !important;
+}
+.mat-menu-content {
+    padding: 0px !important;
+}
+
+.clickable {
+    cursor: pointer;
+}
+.mat-progress-bar-fill::after {
+    background-color: rgb(255,64,129);
+}
+
+.mat-progress-bar-buffer {
+    background-color: #ddd;
+}
+
+.mat-grid-tile, .mat-toolbar {
+    border-radius: 10px;
+}
+
+.carousel-container {
+    width: 200px !important;
+    margin: auto;
+    margin-top: -13px;
+    pointer-events: none;
+}

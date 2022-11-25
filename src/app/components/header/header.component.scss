@@ -1,0 +1,214 @@
+$dark-grey: #444444;
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.name {
+    font-size: 0.8em;
+}
+
+.date-container {
+    float: right;
+    font-size: 0.8em;
+}
+
+.heatmap-link {
+    float: right;
+    clear: both;
+    cursor: pointer;
+    color: #ddd;
+}
+
+mat-toolbar {
+    margin-bottom: 10px;
+    min-height: 100px;
+    background:#888;
+    padding: 0 2px;
+
+    a {
+        color: #ddd;
+    }
+
+    .fa {
+        padding: 0 5px 0 2px;
+        font-size: 1.65em;
+    }
+}
+
+.image-of-me {
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    margin-top: -7px;
+    padding-left: 2px;
+    margin-right: 7px;
+}
+
+.fa-info {
+    color: $dark-grey;
+    font-size: 1em !important;
+}
+
+.fa-bars {
+    color: $dark-grey;
+    font-size: 1.2em !important;
+}
+
+.spacer {
+    height: 100%;
+    padding: 0;
+}
+
+.menu-container {
+    position: absolute;
+    display: inline;
+    bottom: 5px;
+    right: 0;
+    left: 0;
+    text-align: center;
+}
+
+.col-xs-1 {
+    padding: 0;
+}
+
+.menu-icon {
+    width: 100px;
+    margin: auto;
+    //height: 50px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 0.8em;
+    color: $dark-grey;
+}
+
+.col-2 {
+    padding: 0 !important;
+}
+
+.menu-title {
+    text-align: center;
+    font-size: 1.5em;
+    color: black;
+    background-color: #ddd;
+    border-bottom: 2px solid rgb(123, 240, 205);
+    padding: 10px;
+}
+
+.mat-slider-horizontal {
+    //margin: 0 50px 0 20px;
+    align-self: center;
+    margin: auto;
+    width: 100%;
+    cursor: pointer;
+}
+
+.progress-bar-container {
+    height: 50px;
+    * {
+        border-bottom-left-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+    }
+}
+
+.progress-bar {
+    position: absolute;
+    top: 105px;
+    left: 15px;
+    width: calc(100% - 30px);
+}
+
+.header-link {
+    &:hover {
+        color: white;
+        text-decoration: underline;
+    }
+    .fa {
+        &:hover {
+            color: white !important;
+        }
+    }
+}
+
+.arrow-icon {
+    font-size: 2.5em !important;
+    width: 75px;
+    cursor: pointer;
+    color: $dark-grey;
+    text-align: center;
+}
+
+.user-data {
+    text-align: center;
+    height: 30px;
+}
+
+.user-loc {
+    font-size: 1em;
+}
+
+@media only screen and (max-width: 1200px) {
+    .header-link {
+        font-size: 10px;
+    }   
+}
+
+@media only screen and (max-width: 900px) {
+    a {
+        font-size: 0.8em;
+    }
+
+    .user-loc {
+        font-size: 0.6em;
+    }
+
+    .weather-icon {
+        height: 30px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .user-data {
+        font-size: 0.8em;
+    }
+
+    .user-loc {
+        font-size: 1em;
+    }
+
+    .menu-icon {
+        width: 40px;
+        padding: 0;
+        min-width: 40px;
+    }
+
+    .fa {
+        font-size: 1.9em;
+        padding: 10px 5px 0 10px !important;
+    }
+}
+.slider-controls {
+    width: 100%;
+    align-items: center;
+    mat-slider {
+        flex: auto;
+    }
+}
+
+.weather-row {
+    display: flex;
+    justify-content: center;
+    min-height: 24px;
+}
+
+.weather-icon {
+    height: 37px;
+    bottom: -10px;
+    position: relative;
+    padding: 0 5px;
+}
+.me-section {
+    display: flex;
+    margin-left: 5px;
+}

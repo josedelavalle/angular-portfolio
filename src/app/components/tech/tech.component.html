@@ -1,0 +1,34 @@
+<div class="tech-container">
+    <carousel [autoplay]="true" [margin]="30" [loop]="true" [arrows]="false">
+        <div #cell class="carousel-cell">
+          <img [ngClass]="(rowCount > 1) ? 'large' : ''" src="../../assets/images/angular.png" alt="Angular 15">
+          <div class="carousel-caption">
+            <h3>Angular 15</h3>
+          </div>
+        </div>
+      
+        <div #cell class="carousel-cell" matTooltip=".NET WebApi - C#">
+          <img [ngClass]="(rowCount > 1) ? 'large' : ''" src="../../assets/images/csharp.png" alt="C#">
+        </div>
+      
+        <div #cell class="carousel-cell" matTooltip="SQL Server">
+          <img [ngClass]="(rowCount > 1) ? 'large' : ''" src="../../assets/images/sqlserver.png" alt="SQL Server">
+        </div>
+      
+        <div #cell class="carousel-cell" matTooltip="CSS 3">
+          <img [ngClass]="(rowCount > 1) ? 'large' : ''" src="../../assets/images/css3.png" alt="CSS 3">
+        </div>
+        
+        <div #cell class="carousel-cell" matTooltip="HTML 5">
+          <img [ngClass]="(rowCount > 1) ? 'large' : ''" src="../../assets/images/html5.png" alt="HTML 5">
+        </div>
+      
+        <div #cell class="carousel-cell" matTooltip="Bootstrap 4">
+          <img [ngClass]="(rowCount > 1) ? 'large' : ''" src="../../assets/images/bootstrap.png" alt="Bootstrap 4">
+        </div>
+      
+        <div #cell class="carousel-cell" matTooltip="Material Design">
+          <img [ngClass]="(rowCount > 1) ? 'large' : ''" src="../../assets/images/material.png" alt="Material Design">
+        </div>
+    </carousel>
+</div>

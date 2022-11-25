@@ -1,0 +1,13 @@
+.half-row {
+	height: 50%;
+	text-align: center;
+	display:flex;
+	.col {
+		padding: 10px 20px;
+	}
+	
+	fa-icon {
+        font-size: 3em;
+        color: black;
+	}
+}
