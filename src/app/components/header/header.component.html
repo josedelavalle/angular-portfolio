@@ -2,14 +2,13 @@
     <div class="progress-bar-container">
         <mat-progress-bar class="progress-bar" mode="determinate" [value]="ticks"></mat-progress-bar>
     </div>
-    <div class="col-xs-1 col-sm-2">
+    <div class="peripheral-header">
         <div class="me-section">
           <img class="image-of-me" src="../../assets/images/me-stylized.png">
           <span class="name clickable" (click)="goToContactForm()" matTooltip="Send me a message" [matTooltipPosition]="'after'">Jose DeLavalle</span>
         </div>
         <a target="_blank" href="https://github.com/josedelavalle/angular-portfolio">
           <small matTooltip="Why not check out the source code?" [matTooltipPosition]="'below'">
-            <i class="fa fa-github"></i>
             <span class="d-none d-md-inline header-link">Code available on GitHub</span>
           </small>
         </a>
@@ -47,7 +46,8 @@
         </span>
       </span>
     </span>
-    <div class="col-xs-1 col-sm-2 text-center">
+
+    <div class="peripheral-header">
         <div class="date-container d-none d-md-block" matTooltip="{{dateNow | date : 'EEEE'}}" [matTooltipPosition]="'before'" >
           {{dateNow | date : 'longDate'}} 
           <span class="d-none d-xl-inline">{{dateNow | date : 'shortTime'}}</span>

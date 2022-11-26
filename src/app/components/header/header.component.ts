@@ -69,6 +69,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       verticalPosition: 'bottom',
       duration: 12000
     });
+    window.dispatchEvent(new Event('resize'));
   }
   
   goToHeatmap() {
