@@ -1,7 +1,7 @@
 <div class="grid-container">
     <mat-grid-list gutterSize="10px" rowHeight="1:1" [cols]="columnNum">
       <mat-grid-tile
-          *ngFor="let tile of tiles; let i = index"
+          *ngFor="let tile of filteredTiles; let i = index"
           [colspan]="tile.colspan"
           [rowspan]="tile.rowspan"
           [style.background]="'#' + colorSets[colorSet][i]">
@@ -25,7 +25,7 @@
           <app-iframe [footerHidden]="tile.hideFooter"></app-iframe>
         </div>
         <div *ngIf="tile.type == 'tech'">
-          <app-tech [rowCount]="tile.rowspan"></app-tech>
+          <app-tech [rowCount]="tile.rowspan || 1"></app-tech>
         </div>
         <span *ngIf="tile.type == 'social'">
           <app-social></app-social>

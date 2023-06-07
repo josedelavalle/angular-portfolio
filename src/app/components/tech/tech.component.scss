@@ -1,9 +1,28 @@
+@import "../../../../node_modules/swiper/swiper-bundle.min.css";
+
 .carousel-cell {
     margin: auto;
-    
+    min-height: 150px;
+    background-color: #ccc;
+    background-size: cover !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
 }
 
 
+.swiper-caption {
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 21px;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #fefefe;
+    width: auto;
+    line-height: 25px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
 
 .tech-container {
     width: 100%;
@@ -16,7 +35,29 @@
     display: flex;
     justify-content: center;
     align-items:center;
-    img {
-        transform: scale(0.6);
+    .swiper-image {
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 100%;
+        width: min(15vw, 150px);
+        margin: auto;
+        margin-top: 20px;
+    }
+
+}
+
+.swiper-container {
+    position: relative;
+    width: 100%;    
+    text-align: center;
+    height: calc(100% - 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    margin: 0 auto auto auto;
+    .swiper {
+        height: 100%;
     }
 }

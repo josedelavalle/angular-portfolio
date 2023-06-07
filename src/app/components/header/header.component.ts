@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   maxDataSets!: number;
   isCycling!: boolean;
   ticks: number = 0;
-  timerMax: number = 100;
+  timerMax: number = 50;
   timer: Observable<any> | null = null;
   dateNow : Date = new Date();
   faLeft: IconDefinition = faChevronLeft;
@@ -27,8 +27,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   faBars: IconDefinition = faBars;
 
   descriptions : Array<string> = [
-    'Add countries to the app in order to compare and contrast various country populations broken down by year, gender, and age.  Click anywhere on the map to add that country\'s population to the data set or drag the marker to the country of your choice.',
-    'Internet news from the top media sources collated all under one roof, just for you.  Read current articles from your favorite outlets homepage, in realtime. Pick a source to peruse their recently published articles, or search all by keyword. Want something random?  Press "explore"',
+    'Click on map to browse photos taken at that location',
+    // 'Internet news from the top media sources collated all under one roof, just for you.  Read current articles from your favorite outlets homepage, in realtime. Pick a source to peruse their recently published articles, or search all by keyword. Want something random?  Press "explore"',
     'App will default to finding photos uploaded to Flckr taken at wherever you currently are in the world, use the map to explore at your leasure, or simply type in what you are looking for.',
     'Drill down to your desired US State to find interactive county results.  Explore photos taken at that location, along with maps, and links to the official local government websites.',
     'A Datepicker lets you check out the Pic of The Day from NASA, MARS Rover image history, satelite imagery for your desired location and more.',
@@ -69,21 +69,26 @@ export class HeaderComponent implements OnInit, OnDestroy {
       verticalPosition: 'bottom',
       duration: 12000
     });
-    window.dispatchEvent(new Event('resize'));
+    
   }
   
   goToHeatmap() {
     this.sliderDataService.setHashbang('#map');
-    this.sliderDataService.setDataSet(6);
+    this.sliderDataService.setDataSet(this.sliderDataService.maxDataSet);
   }
 
   goToContactForm() {
     this.sliderDataService.setHashbang('#contact');
-    this.sliderDataService.setDataSet(6);
+    this.sliderDataService.setDataSet(this.sliderDataService.maxDataSet);
   }
 
   ngOnInit() {
-    this.timer = timer(1, this.timerMax).pipe(take(100)).pipe(repeat());
+    // setInterval(() => {
+    //   console.log('window', window)
+    //   window.dispatchEvent(new Event('resize'));  
+    // }, 2000);
+    
+    this.timer = timer(1, this.timerMax).pipe(take(50)).pipe(repeat());
     this.sliderDataService.cast.subscribe(dataSet => this.dataSet = dataSet);
     this.userDataService.getUserData().subscribe((userData: any) => { 
       this.userData = userData;
@@ -134,7 +139,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     if (!this.timer) return;
     this.subscription = this.timer.subscribe(t => {
         this.ticks = t;
-        if (this.ticks == 99) {
+        if (this.ticks == 49) {
           this.colorDataService.nextDataSet();
         }
       }

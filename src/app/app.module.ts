@@ -13,10 +13,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { ColorControlComponent } from './components/color-control/color-control.component';
 import { IframeComponent } from './components/iframe/iframe.component';
 import { TechComponent } from './components/tech/tech.component';
-import { IvyCarouselModule } from 'angular-responsive-carousel2';
 import { MapComponent } from './components/map/map.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { SocialComponent } from './components/social/social.component'
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   declarations: [
@@ -36,8 +36,8 @@ import { SocialComponent } from './components/social/social.component'
     FormsModule,
     HttpClientModule,
     FontAwesomeModule,
-    IvyCarouselModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

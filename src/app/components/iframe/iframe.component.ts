@@ -22,17 +22,17 @@ export class IframeComponent implements OnInit {
   updateIframe() {
     switch (this.dataSet) {
       case 1:
-        return "//ngpopulation.josedelavalle.com";
+        return "https://ngpopulation.josedelavalle.com";
+      // case 2:
+      //   return "//ngnews.josedelavalle.com";
       case 2:
-        return "//ngnews.josedelavalle.com";
+        return "https://nggallery.josedelavalle.com";
       case 3:
-        return "//nggallery.josedelavalle.com";
+        return "https://ngstates.josedelavalle.com";
       case 4:
-        return "//ngstates.josedelavalle.com";
+        return "https://ngnasa.josedelavalle.com";
       case 5:
-        return "//ngnasa.josedelavalle.com";
-      case 6:
-        return "//me.josedelavalle.com" + this.hashbang;
+        return "https://me.slickwebstudio.com" + this.hashbang;
     }
     return '';
   }

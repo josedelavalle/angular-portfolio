@@ -60,6 +60,7 @@ mat-toolbar {
     padding: 0;
 }
 
+
 .menu-container {
     position: absolute;
     display: inline;
@@ -67,6 +68,12 @@ mat-toolbar {
     right: 0;
     left: 0;
     text-align: center;
+    z-index: 2;
+    .menu-icon {
+        padding: 10px 13px;
+        background-color: #fefefe;
+        border-radius: 50%;
+    }
 }
 
 .col-xs-1 {
@@ -94,6 +101,7 @@ mat-toolbar {
     background-color: #ddd;
     border-bottom: 2px solid rgb(123, 240, 205);
     padding: 10px;
+    margin-bottom: 10px;
 }
 
 .mat-slider-horizontal {
@@ -167,6 +175,8 @@ mat-toolbar {
 @media only screen and (max-width: 500px) {
     .user-data {
         font-size: 0.8em;
+        margin-top: -12px;
+        margin-bottom: 15px;
     }
 
     .user-loc {
@@ -201,6 +211,12 @@ mat-toolbar {
 @media screen and (max-width: 900px) {
     .peripheral-header {
         display: none;
+    }
+}
+
+.peripheral-header {
+    a {
+        margin-left: 8px;
     }
 }
 

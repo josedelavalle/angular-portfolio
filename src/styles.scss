@@ -101,3 +101,24 @@ body {
     margin-top: -13px;
     pointer-events: none;
 }
+.swiper-wrapper{
+    display:inline-flex;
+    height: 100%;
+    align-items: center;
+    .swiper-slide {
+        position: relative;
+        height: 100%;
+        display: flex;
+        .swiper-caption {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;        
+        }
+    }
+}
+
+
+.mat-mdc-menu-content {
+    padding: 0 !important;
+}

@@ -10,7 +10,7 @@ export class SliderService {
   private hashbang = new BehaviorSubject<string>('');
   cast = this.dataSet.asObservable();
   castHash = this.hashbang.asObservable();
-  maxDataSet: number = 6;
+  maxDataSet: number = 5;
   constructor() { }
 
   nextDataSet() {
